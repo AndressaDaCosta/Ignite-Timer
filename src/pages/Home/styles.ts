@@ -25,14 +25,14 @@ export const FormContainer = styled.div`
 	font-weight: bold;
 	flex-wrap: wrap;
 `;
-
+// componente estilizado de base para outros componentes
 const BaseInput = styled.input`
 	background: transparent;
 	height: 2.5rem;
 	border: 0;
 	border-bottom: 2px solid ${(props) => props.theme['gray-500']};
 	font-weight: bold;
-	font-size: 1.125rem;
+	font-size: 1.125rem; /* <- nao herda o font size do container ou -> font-size: inherit;  */
 	padding: 0 0.5rem;
 	color: ${(props) => props.theme['gray-100']};
 	&:focus {
