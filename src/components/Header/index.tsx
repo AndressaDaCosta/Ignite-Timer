@@ -16,6 +16,7 @@ export function Header() {
 			<nav>
 				<NavLink
 					to="/"
+					end
 					title="Timer">
 					<Timer size={24} />
 				</NavLink>
@@ -26,5 +27,5 @@ export function Header() {
 				</NavLink>
 			</nav>
 		</HeaderContainer>
-	)
+	);
 }
