@@ -13,12 +13,12 @@ export const HistoryContainer = styled.main`
 
 export const HistoryList = styled.div`
 	flex: 1;
-	overflow: auto;
+	overflow: auto; /* barra de rolagem no mobile */
 	margin-top: 2rem;
 	table {
 		width: 100%;
 		border-collapse: collapse;
-		min-width: 600px;
+		min-width: 600px; /* se for maior gera o scroll */
 		th {
 			background-color: ${(props) => props.theme['gray-600']};
 			padding: 1rem;
@@ -71,7 +71,7 @@ export const Status = styled.span<StatusProps>`
 		content: '';
 		width: 0.5rem;
 		height: 0.5rem;
-		border-radius: 9999px;
+		border-radius: 50%; /* border-radius: 9999px; */
 		background: ${(props) => props.theme[STATUS_COLORS[props.statusColor]]};
 	}
 `;
