@@ -12,7 +12,9 @@ export function Header() {
 					src={logoIgnite}
 					alt=""
 				/>
+				<span>Ignite Timer</span>
 			</span>
+
 			<nav>
 				<NavLink
 					to="/"

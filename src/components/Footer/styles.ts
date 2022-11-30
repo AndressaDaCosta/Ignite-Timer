@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.header`
+export const FooterContainer = styled.footer`
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-evenly;
 
 	span {
-		font-size: 1.5rem;
-		font-weight: 700;
+		font-size: 1rem;
+		font-weight: 400;
 		color: ${(props) => props.theme['gray-100']};
-		display: flex;
-		align-items: center;
-		gap: 1rem;
+
+		&:hover {
+			color: ${(props) => props.theme['green-500']};
+		}
 	}
 
 	nav {
@@ -31,6 +32,7 @@ export const HeaderContainer = styled.header`
 			}
 			&:hover {
 				border-bottom: 3px solid ${(props) => props.theme['green-500']};
+				color: ${(props) => props.theme['green-500']};
 			}
 		}
 	}
