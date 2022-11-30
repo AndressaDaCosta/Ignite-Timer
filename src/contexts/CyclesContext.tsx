@@ -8,7 +8,7 @@ import {
 } from 'react';
 
 import {
-	ActionTypes,
+	// ActionTypes,
 	addNewCycleAction,
 	interruptCurrentCycleAction,
 	markCurrentCycleAsFinishedAction
@@ -45,6 +45,7 @@ export function CyclesContextProvider({
 	// 	cycles: [],
 	// 	activeCycleId: null
 	// });
+
 	const [cyclesState, dispatch] = useReducer(
 		cyclesReducer,
 		{
@@ -52,15 +53,23 @@ export function CyclesContextProvider({
 			activeCycleId: null
 		},
 		() => {
-			const storedStateAsJSON = localStorage.getItem(
+			const storedStateAsJSON: string | null = localStorage.getItem(
 				'@ignite-timer:cycles-state-1.0.0'
 			);
 
 			if (storedStateAsJSON) {
 				return JSON.parse(storedStateAsJSON);
 			}
+			return {
+				cycles: [],
+				activeCycleId: null
+			};
 		}
 	);
+
+	const { cycles, activeCycleId } = cyclesState;
+
+	const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId);
 
 	// const [activeCycleId, setActiveCycleId] = useState<string | null>(null);
 	// const [amountSecondsPassed, setAmountSecondsPassed] = useState(0);
@@ -81,9 +90,6 @@ export function CyclesContextProvider({
 
 		localStorage.setItem('@ignite-timer:cycles-state-1.0.0', stateJSON);
 	}, [cyclesState]);
-
-	const { cycles, activeCycleId } = cyclesState;
-	const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId);
 
 	function setSecondsPassed(seconds: number) {
 		setAmountSecondsPassed(seconds);
