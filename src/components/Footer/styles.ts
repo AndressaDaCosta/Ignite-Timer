@@ -3,7 +3,19 @@ import styled from 'styled-components';
 export const FooterContainer = styled.footer`
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-between;
+
+	img {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 8px;
+		border: 3px solid ${(props) => props.theme['green-500']};
+		outline: 2px solid ${(props) => props.theme['gray-100']};
+		&:hover {
+			border: 3px solid ${(props) => props.theme['gray-100']};
+			outline: 2px solid ${(props) => props.theme['green-500']};
+		}
+	}
 
 	span {
 		font-size: 1rem;
