@@ -4,15 +4,11 @@ import { LinkedinLogo, GithubLogo } from 'phosphor-react';
 export function Footer() {
 	return (
 		<FooterContainer>
-			<a
-				href="https://github.com/AndressaDaCosta"
-				target="_blank"
-				rel="noopener noreferrer">
-				<img
-					src="https://github.com/AndressaDaCosta.png"
-					alt="Foto Avatar AndressaDaCosta"
-				/>
-			</a>
+			<img
+				src="https://github.com/AndressaDaCosta.png"
+				alt="Foto Avatar AndressaDaCosta"
+			/>
+
 			<span>Desenvolvido por Andressa Da Costa</span>
 			<nav>
 				<a
