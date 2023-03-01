@@ -23,6 +23,17 @@ const newCycleFormValidationSchema = zod.object({
 
 type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>;
 
+/* interface NewCycleFormData {
+	task: string;
+	minutesAmount: number;
+}
+*/
+/**
+ *  Prop Drilling - > Quando a gente tem MUITAS propridades APENAS para comunicação entre componentes
+ * 
+ * Context API -> Permite compartilhar informações entre VÄRIOS componentes ao mesmo tempo */
+
+
 export function Home() {
 	const { activeCycle, createNewCycle, interruptCurrentCycle } =
 		useContext(CyclesContext);
